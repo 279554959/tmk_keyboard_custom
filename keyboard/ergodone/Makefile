@@ -54,7 +54,8 @@ SRC =	keymap_common.c \
 	backlight.c \
 	ledmap.c \
 	twimaster.c \
-	expander.c
+	expander.c \
+	mousekey.c
 
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)

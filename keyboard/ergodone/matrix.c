@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "expander.h"
 #include "keymap_in_eeprom.h"
 #include "timer.h"
+#include <LUFA/Drivers/Peripheral/ADC.h>
 
 
 #ifndef DEBOUNCE
@@ -101,6 +102,11 @@ void matrix_init(void)
         matrix_debouncing[i] = 0;
     }
 #endif
+
+//No2
+    ADC_Init(ADC_SINGLE_CONVERSION | ADC_PRESCALE_32);
+    ADC_SetupChannel(12);
+    ADC_SetupChannel(13);
 }
 
 uint8_t matrix_scan(void)
