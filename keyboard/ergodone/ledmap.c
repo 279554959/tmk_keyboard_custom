@@ -15,6 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+//No1
 #include <avr/pgmspace.h>
 #include "ledmap.h"
 
@@ -35,8 +36,11 @@ ledmap_t ledmap_get_code(uint8_t index)
 
 void ledmap_led_init(void)
 {
-    DDRB  |=  (1<<PB5 | 1<<PB6 | 1<<PB3);
-    PORTB &= ~(1<<PB5 | 1<<PB6 | 1<<PB3);
+    //No1
+    // DDRB  |=  (1<<PB5 | 1<<PB6 | 1<<PB3);
+    // PORTB &= ~(1<<PB5 | 1<<PB6 | 1<<PB3);
+    DDRB  |=  (1<<PB3);
+    PORTB |=  (1<<PB3);
     DDRB  |=  (1<<PB0);
     PORTB |=  (1<<PB0);
     DDRD  |=  (1<<PD5);
@@ -47,11 +51,13 @@ void ledmap_led_on(uint8_t index)
 {
     switch (index) {
         case 0:
-            PORTB |=  (1<<PB5);
-            break;
+        //No1
+            // PORTB |=  (1<<PB5);
+            // break;
         case 1:
-            PORTB |=  (1<<PB6);
-            break;
+        //No1
+            // PORTB |=  (1<<PB6);
+            // break;
         case 2:
             PORTB |=  (1<<PB3);
             break;
@@ -68,11 +74,13 @@ void ledmap_led_off(uint8_t index)
 {
     switch (index) {
         case 0:
-            PORTB &= ~(1<<PB5);
-            break;
+        //No1
+            // PORTB &= ~(1<<PB5);
+            // break;
         case 1:
-            PORTB &= ~(1<<PB6);
-            break;
+        //No1
+            // PORTB &= ~(1<<PB6);
+            // break;
         case 2:
             PORTB &= ~(1<<PB3);
             break;
